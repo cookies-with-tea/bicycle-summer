@@ -4,15 +4,9 @@
   $sm: 320px,
   $md: $breakpoint--md,
   $lg: $breakpoint--lg,
-  $xl: $breakpoint--xl,
+  $xl: $breakpoint--xl
 );
 
 @use 'element-plus/theme-chalk/src/col';
 
 @use 'element-plus/theme-chalk/src/row';
-
-@use 'notification';
-@use 'tree';
-@use 'autocomplete';
-@use 'table';
-@use 'select';

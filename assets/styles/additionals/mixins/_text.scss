@@ -30,7 +30,6 @@
   }
 }
 
-
 @mixin truncate($lines: 3, $truncation-boundary: 100%, $display: -webkit-box) {
   max-width: $truncation-boundary;
   display: $display;

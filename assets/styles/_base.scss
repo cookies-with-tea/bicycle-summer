@@ -42,7 +42,9 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body, #__nuxt {
+html,
+body,
+#__nuxt {
   height: 100%;
 }
 
@@ -50,8 +52,18 @@ body {
   color: var(--color-black);
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-weight: 800;
 }
 
@@ -111,7 +123,6 @@ h5,
   }
 }
 
-
 .link {
   border: unset;
   text-decoration: none;
@@ -148,113 +159,4 @@ h5,
 
 .layout-padding-bottom-0 {
   margin-bottom: calc(var(--layout-padding-bottom) * -1);
-}
-
-.el-popup-parent--hidden {
-  @include responsive(md, $breakpoints-only-max) {
-    width: 100% !important;
-  }
-}
-
-.site-content {
-  max-width: 880px;
-
-  p {
-    margin: 20px 0;
-
-    @include responsive(md) {
-      margin: 24px 0;
-    }
-
-    @include responsive(lg) {
-      margin: 28px 0;
-    }
-  }
-
-  img {
-    width: 100%;
-    max-width: 880px;
-    max-height: 500px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin: 32px 0;
-
-    @include responsive(md) {
-      margin: 40px 0;
-    }
-
-    @include responsive(lg) {
-      margin: 48px 0;
-    }
-  }
-
-  figure {
-    margin: 32px 0;
-
-    img {
-      margin: 0;
-    }
-
-    @include responsive(md) {
-      margin: 40px 0;
-    }
-
-    @include responsive(lg) {
-      margin: 48px 0;
-    }
-  }
-
-  ul {
-    li {
-      position: relative;
-      margin-left: 32px;
-
-      &::before {
-        content: "";
-        top: 10px;
-        left: -18px;
-        width: 4px;
-        height: 4px;
-        position: absolute;
-        border-radius: 50%;
-        background-color: var(--color-black);
-      }
-
-      &:not(:first-child) {
-        margin-top: 16px;
-      }
-
-      &:first-child {
-        margin-top: 28px;
-      }
-    }
-  }
-
-  ol {
-    counter-reset: section;
-    padding-left: 4px;
-    margin-top: 8px;
-
-    li {
-      display: flex;
-      margin-bottom: 8px;
-
-      &::before {
-        counter-increment: section;
-        content: counters(section, '.') '.';
-        word-break: normal;
-        margin-right: 2px;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  a {
-    font-size: var(--font-size--lg);
-    text-decoration: none;
-    color: var(--color-blue-2);
-  }
 }

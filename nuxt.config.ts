@@ -1,13 +1,13 @@
-import type { NuxtPage } from "nuxt/schema"
-import {fileURLToPath} from "node:url";
+import type { NuxtPage } from 'nuxt/schema'
+import { fileURLToPath } from 'node:url'
 
 const devPlugins: Plugin[] = []
 
 // DEBT: А надо ли это указывать в dev зависимости?
 if (process.env.DEV) {
   import('vite-plugin-compression2').then((r) => {
-    devPlugins.push(<Plugin>r.compression());
-  });
+    devPlugins.push(<Plugin>r.compression())
+  })
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -30,10 +30,7 @@ export default defineNuxtConfig({
   elementPlus: {
     importStyle: 'scss',
   },
-  modules: [
-    '@element-plus/nuxt',
-    '@nuxt/image',
-  ],
+  modules: ['@element-plus/nuxt', '@nuxt/image'],
   image: {
     quality: 80,
     format: ['webp'],
@@ -87,9 +84,7 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [
-      ...devPlugins,
-    ],
+    plugins: [...devPlugins],
     build: { chunkSizeWarningLimit: 1600 },
     resolve: {
       alias: {
