@@ -5,6 +5,12 @@
 </template>
 
 <script lang="ts" setup>
+import { ROUTES } from '#shared/contants'
+
+definePageMeta({
+  redirect: { name: ROUTES.UIKIT.name },
+})
+
 useSeoMeta({
   title: 'Большой ассортимент товаров',
 })

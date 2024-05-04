@@ -1,19 +1,23 @@
 import type { NuxtPage } from 'nuxt/schema'
 import { fileURLToPath } from 'node:url'
+import compression from 'vite-plugin-compression2'
+import path from 'node:path'
+import { typedIconPlugin } from 'typed-icon-template'
 
-const devPlugins: Plugin[] = []
+const typedIconPluginConfig = typedIconPlugin({
+  iconsPath: path.join(process.cwd(), './assets/icons'),
+  iconComponentPath: path.resolve(process.cwd(), './src/shared/ui/ui-icon/types'),
+  fileName: 'index.ts',
+})
 
-// DEBT: А надо ли это указывать в dev зависимости?
-if (process.env.DEV) {
-  import('vite-plugin-compression2').then((r) => {
-    devPlugins.push(<Plugin>r.compression())
-  })
-}
-
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   experimental: { asyncContext: true },
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+    timeline: {
+      enabled: true,
+    },
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -30,7 +34,25 @@ export default defineNuxtConfig({
   elementPlus: {
     importStyle: 'scss',
   },
-  modules: ['@element-plus/nuxt', '@nuxt/image'],
+  svgo: {
+    componentPrefix: 'ui',
+    defaultImport: 'component',
+  },
+  alias: {
+    '@': fileURLToPath(new URL('./src', import.meta.url)),
+    '@@': fileURLToPath(new URL('./', import.meta.url)),
+    public: fileURLToPath(new URL('./public', import.meta.url)),
+    assets: fileURLToPath(new URL('./assets', import.meta.url)),
+    styles: fileURLToPath(new URL('./assets/styles', import.meta.url)),
+    app: fileURLToPath(new URL('./src/app', import.meta.url)),
+    '#processes': fileURLToPath(new URL('./src/processes', import.meta.url)),
+    '#pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
+    '#widgets': fileURLToPath(new URL('./src/widgets', import.meta.url)),
+    '#features': fileURLToPath(new URL('./src/features', import.meta.url)),
+    '#entities': fileURLToPath(new URL('./src/entities', import.meta.url)),
+    '#shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
+  },
+  modules: ['@element-plus/nuxt', '@nuxt/image', 'nuxt-svgo'],
   image: {
     quality: 80,
     format: ['webp'],
@@ -42,7 +64,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['assets/styles/index.scss'],
-
   typescript: {
     strict: true,
   },
@@ -66,7 +87,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
   vite: {
     server: {
       proxy: {
@@ -84,30 +104,13 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [...devPlugins],
+    plugins: [typedIconPluginConfig, compression()],
     build: { chunkSizeWarningLimit: 1600 },
-    resolve: {
-      alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
-        '@@': fileURLToPath(new URL('./', import.meta.url)),
-        public: fileURLToPath(new URL('./public', import.meta.url)),
-        assets: fileURLToPath(new URL('./assets', import.meta.url)),
-        styles: fileURLToPath(new URL('./assets/styles', import.meta.url)),
-        app: fileURLToPath(new URL('./src/app', import.meta.url)),
-        '#processes': fileURLToPath(new URL('./src/processes', import.meta.url)),
-        '#pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
-        '#widgets': fileURLToPath(new URL('./src/widgets', import.meta.url)),
-        '#features': fileURLToPath(new URL('./src/features', import.meta.url)),
-        '#entities': fileURLToPath(new URL('./src/entities', import.meta.url)),
-        '#shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
-      },
-    },
   },
-
   hooks: {
     'pages:extend'(pages: NuxtPage[]) {
       function removePagesMatching(pathPattern: RegExp, filePattern: RegExp, pages: NuxtPage[] = []) {
-        const pagesToRemove = []
+        const pagesToRemove: NuxtPage[] = []
 
         for (const page of pages) {
           if (pathPattern.test(page.path) || (page.file && filePattern.test(page.file))) {
