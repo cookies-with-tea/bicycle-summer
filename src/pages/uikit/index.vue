@@ -15,7 +15,9 @@
           <el-input v-model="formData.text1" placeholder="Hi" />
         </ui-form-item>
 
-        <el-button> Submit </el-button>
+        <ui-form-item>
+          <el-button> Submit </el-button>
+        </ui-form-item>
       </ui-form>
     </div>
   </div>

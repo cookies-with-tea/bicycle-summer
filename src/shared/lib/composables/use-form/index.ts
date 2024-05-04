@@ -4,19 +4,8 @@ import { useFormErrors } from '#shared/lib/composables'
 export const useForm = (options: UseFormOptionsType) => {
   const { setFormErrors } = useFormErrors()
 
-  const isFormInit = ref(false)
   const isLoading = ref(false)
   const isValid = ref(false)
-
-  watch(
-    () => options.ref.value,
-    (value) => {
-      if (value) {
-        isFormInit.value = true
-      }
-    },
-    { deep: true }
-  )
 
   const submit = async () => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
