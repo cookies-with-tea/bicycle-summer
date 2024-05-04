@@ -1,7 +1,5 @@
 <template>
-  <div class="ui-icon">
-    <component :is="`ui-${props.name}`" class="a-icon" :class="iconClass" width="1em" height="1em" aria-hidden="true" />
-  </div>
+  <component :is="`ui-${props.name}`" class="a-icon" :class="iconClass" width="1em" height="1em" aria-hidden="true" />
 </template>
 
 <script setup lang="ts">
