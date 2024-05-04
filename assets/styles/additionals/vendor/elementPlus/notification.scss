@@ -1,0 +1,76 @@
+@use 'assets/styles/additionals/mixins' as *;
+
+body {
+  .el-notification {
+    --el-notification-padding: 20px;
+    --el-notification-radius: 12px;
+    --el-notification-title-font-size: var(--font-size--md);
+    --el-notification-icon-size: var(--line-height--primary);
+    --el-notification-content-color: var(--color-black);
+
+    width: 288px;
+    border: none;
+    box-shadow: none;
+    padding-right: 30px;
+
+    &__group {
+      max-width: 246px;
+      margin: 0;
+    }
+
+    &__title {
+      padding-right: 34px;
+
+      @include responsive(lg) {
+        padding-right: 0;
+      }
+    }
+
+    &__content {
+      line-height: var(--line-height--primary);
+      text-align: start;
+      margin-top: 4px;
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    .el-notification__closeBtn {
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: var(--color-black);
+    }
+
+    &.right {
+      right: 16px;
+
+      @include responsive(lg) {
+        right: 56px;
+      }
+    }
+
+    &.s-message {
+      &--success {
+        background-color: var(--color-message-success);
+      }
+
+      &--error {
+        background-color: var(--color-message-error);
+      }
+
+      &--warning {
+        background-color: var(--color-message-warning);
+      }
+
+      &--info {
+        background-color: var(--color-message-info);
+      }
+    }
+
+    @include responsive(md) {
+      width: 320px;
+    }
+  }
+}

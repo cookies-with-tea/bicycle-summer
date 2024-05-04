@@ -1,0 +1,56 @@
+@use 'assets/styles/additionals/mixins' as *;
+@use 'assets/styles/additionals/variables' as *;
+
+body {
+  .el-select__popper {
+    .reconciliation-report__list-popper {
+      @include responsive(sm, $breakpoints-only-max) {
+        .el-select-dropdown__list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .el-select-dropdown__item {
+          height: fit-content;
+          min-height: 48px;
+
+          span {
+            white-space: normal;
+          }
+
+          .s-option__content {
+            flex-wrap: wrap;
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+    .order-for-subscribe__list-popper {
+      .el-select-dropdown__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .el-select-dropdown__item {
+        height: fit-content;
+        min-height: 48px;
+
+        span {
+          white-space: normal;
+        }
+
+        .s-option__content {
+          flex-wrap: wrap;
+          white-space: normal;
+        }
+      }
+
+      .el-select-dropdown__wrap {
+        padding: 16px 0;
+      }
+    }
+  }
+}

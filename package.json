@@ -1,0 +1,59 @@
+{
+  "name": "bicycle-summer",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "prepare": "husky",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "eslint": "eslint . --ext .js,.tsx,.ts",
+    "eslint:fix": "pnpm eslint --fix",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "stylelint:fix": "pnpm stylelint --fix",
+    "lint": "pnpm eslint && pnpm stylelint && pnpm prettier",
+    "lint:fix": "pnpm eslint:fix && pnpm stylelint:fix && pnpm prettier:fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "type-check": "tsc --noEmit --skipLibCheck"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.7.0",
+    "@types/node": "^20.12.8",
+    "date-fns": "^3.6.0",
+    "element-plus": "^2.7.2",
+    "nuxt": "^3.11.2",
+    "swiper": "^11.1.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.0.9",
+    "@nuxtjs/eslint-module": "^4.0.2",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.11.0",
+    "husky": "^9.0.11",
+    "postcss-html": "^1.6.0",
+    "prettier": "2.8.8",
+    "sass": "^1.76.0",
+    "stylelint": "^15.7.0",
+    "stylelint-config-css-modules": "^4.2.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "typescript": "^5.4.5",
+    "vite-plugin-compression2": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=20.8.1"
+  }
+}
