@@ -1,5 +1,6 @@
 use chrono::NaiveDateTime;
 use serde_derive::{Deserialize, Serialize};
+use uuid::Uuid;
 
 #[derive(Deserialize, Debug)]
 pub struct CreateUserDTO {
@@ -13,7 +14,7 @@ pub struct UpdateUserDTO {
 
 #[derive(Serialize, Debug, sqlx::FromRow)]
 pub struct User {
-  id: i32,
+  id: Uuid,
   first_name: String,
   second_name: String,
   last_name: String,

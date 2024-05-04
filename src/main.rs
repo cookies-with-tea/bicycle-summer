@@ -1,5 +1,6 @@
 mod core;
 mod user;
+mod bicycle;
 
 use serde::{Deserialize, Serialize};
 use std::{sync::Arc};
