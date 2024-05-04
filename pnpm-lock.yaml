@@ -102,6 +102,9 @@ importers:
       stylelint-config-standard-scss:
         specifier: ^9.0.0
         version: 9.0.0(postcss@8.4.38)(stylelint@15.11.0(typescript@5.1.3))
+      ts-reset:
+        specifier: ^0.0.1
+        version: 0.0.1
       typed-icon-template:
         specifier: ^0.0.6
         version: 0.0.6(vite@5.2.11(@types/node@20.12.8)(sass@1.76.0)(terser@5.31.0))
@@ -4433,6 +4436,9 @@ packages:
   trim-newlines@4.1.1:
     resolution: {integrity: sha512-jRKj0n0jXWo6kh62nA5TEh3+4igKDXLvzBJcPpiizP7oOolUrYIxmVBG9TOtHYFHoddUk6YvAkGeGoSVTXfQXQ==}
     engines: {node: '>=12'}
+
+  ts-reset@0.0.1:
+    resolution: {integrity: sha512-MAN3eAzO2T0hWXN4iHaH6YBFU9ZX9fMXkCPYPbgy+tHU4NLFOUbuBUgefl2122CuJ2WDP8DjrRg3NTS0LYd1WQ==}
 
   tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -10076,6 +10082,8 @@ snapshots:
   tr46@0.0.3: {}
 
   trim-newlines@4.1.1: {}
+
+  ts-reset@0.0.1: {}
 
   tslib@1.14.1: {}
 
