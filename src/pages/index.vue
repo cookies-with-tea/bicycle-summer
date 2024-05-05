@@ -10,8 +10,4 @@ import { ROUTES } from '#shared/contants'
 definePageMeta({
   redirect: { name: ROUTES.UIKIT.name },
 })
-
-useSeoMeta({
-  title: 'Большой ассортимент товаров',
-})
 </script>

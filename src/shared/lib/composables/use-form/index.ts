@@ -1,37 +1,58 @@
 import type { UseFormOptionsType } from '#shared/lib/composables/use-form/types'
 import { useFormErrors } from '#shared/lib/composables'
 
+const showNotification = (notification: UseFormOptionsType['notification']) => {
+  if (typeof notification === 'undefined') return
+
+  if (typeof notification === 'boolean') {
+    ElNotification.success({
+      title: 'Успешно',
+      message: 'Данные успешно отправлены',
+    })
+
+    return
+  }
+
+  ElNotification.success({
+    title: notification.title ?? 'Успешно',
+    message: notification.message ?? 'Данные успешно отправлены',
+  })
+}
+
 export const useForm = (options: UseFormOptionsType) => {
-  const { setFormErrors } = useFormErrors()
+  const { setFormErrors, clearFormErrors } = useFormErrors()
 
   const isLoading = ref(false)
   const isValid = ref(false)
 
-  const submit = async () => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    isValid.value = await options!.ref.value!.validate()!
+  const submit = async (): Promise<void> => {
+    clearFormErrors()
+
+    isValid.value = (await options?.ref?.value?.validate()) ?? false
 
     if (!isValid.value) {
-      return {
-        isValid: false,
-        isLoading: false,
-        submit,
-      }
+      return
     }
-
-    isLoading.value = true
 
     if (options.cb) {
+      isLoading.value = true
+
       const response = await options.cb()
 
-      setFormErrors([
-        {
-          email: ['Обязательное поле'],
-        },
-      ])
-    }
+      isLoading.value = false
 
-    isLoading.value = false
+      if (response) {
+        options?.onSuccess?.(response)
+
+        showNotification(options.notification)
+
+        return
+      }
+
+      const errors = options.errors || response.errors || {}
+
+      setFormErrors(errors)
+    }
   }
 
   return {

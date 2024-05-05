@@ -1,5 +1,7 @@
 <template>
   <div class="uikit-page">
+    <nuxt-link :to="{ name: ROUTES.ABOUT.name }">About</nuxt-link>
+
     <h1>Текст h1</h1>
     <h2>Текст h2</h2>
 
@@ -10,29 +12,47 @@
     </div>
 
     <div class="box">
-      <ui-form :model="formData">
-        <ui-form-item prop="email">
-          <el-input v-model="formData.text1" placeholder="Hi" />
+      <ui-form
+        ref="formRef"
+        notification
+        :model="formData"
+        :rules="rules"
+        :action="userApi.getMe"
+        :on-success="getData"
+        :on-error="onError"
+      >
+        <ui-form-item prop="name">
+          <el-input v-model="formData.name" placeholder="Hi" />
         </ui-form-item>
 
-        <ui-form-item>
-          <el-button> Submit </el-button>
-        </ui-form-item>
+        <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
       </ui-form>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { UiForm, UiFormItem, UiIcon } from '#shared/ui'
+import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType } from '#shared/ui'
+import { userApi, type UserType } from '#entities/user'
+import type { FormRules } from 'element-plus'
+import { FORM_RULES, ROUTES } from '#shared/contants'
+const formRef = ref<UiFormInstanceType>()
+
+const rules: FormRules = {
+  name: FORM_RULES.required,
+}
 
 const formData = ref({
-  text1: '',
+  name: '',
 })
 
-useSeoMeta({
-  title: 'UiKit',
-})
+const getData = async (data: UserType) => {
+  console.log('[INFO]: UPDATE DATA', data)
+}
+
+const onError = (error: Error) => {
+  console.log('[ERROR]: GET ERROR', error)
+}
 </script>
 
 <style lang="scss" scoped>

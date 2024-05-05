@@ -36,6 +36,9 @@ importers:
       '@element-plus/nuxt':
         specifier: ^1.0.9
         version: 1.0.9(@element-plus/icons-vue@2.3.1(vue@3.4.26(typescript@5.1.3)))(element-plus@2.7.2(vue@3.4.26(typescript@5.1.3)))(rollup@4.17.2)
+      '@nuxtjs/device':
+        specifier: ^3.1.1
+        version: 3.1.1(rollup@4.17.2)
       '@nuxtjs/eslint-module':
         specifier: ^4.0.2
         version: 4.1.0(eslint@8.22.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.8)(sass@1.76.0)(terser@5.31.0))(webpack@5.91.0)
@@ -692,6 +695,9 @@ packages:
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
       vue: ^3.3.4
+
+  '@nuxtjs/device@3.1.1':
+    resolution: {integrity: sha512-wHTziEevt1hdgePQwPhEedWW3COalhP0YGVB+sGLqSrKujX8vdz7lcBFB01KIftpaP8kY5H8pssibNaJbxGcYw==}
 
   '@nuxtjs/eslint-module@4.1.0':
     resolution: {integrity: sha512-lW9ozEjOrnU8Uot3GOAZ/0ThNAds0d6UAp9n46TNxcTvH/MOcAggGbMNs16c0HYT2HlyPQvXORCHQ5+9p87mmw==}
@@ -5775,6 +5781,14 @@ snapshots:
       - vls
       - vti
       - vue-tsc
+
+  '@nuxtjs/device@3.1.1(rollup@4.17.2)':
+    dependencies:
+      '@nuxt/kit': 3.11.2(rollup@4.17.2)
+      defu: 6.1.4
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
 
   '@nuxtjs/eslint-module@4.1.0(eslint@8.22.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.8)(sass@1.76.0)(terser@5.31.0))(webpack@5.91.0)':
     dependencies:
