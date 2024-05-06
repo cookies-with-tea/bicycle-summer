@@ -1,5 +1,5 @@
-import type { UseFormOptionsType } from '#shared/lib/composables/use-form/types'
 import { useFormErrors } from '#shared/lib/composables'
+import type { UseFormOptionsType } from '#shared/lib/composables/use-form/types'
 
 const showNotification = (notification: UseFormOptionsType['notification']) => {
   if (typeof notification === 'undefined') return
@@ -30,11 +30,9 @@ export const useForm = (options: UseFormOptionsType) => {
 
     isValid.value = (await options?.ref?.value?.validate()) ?? false
 
-    if (!isValid.value) {
-      return
-    }
+    if (!isValid.value) return
 
-    if (options.cb) {
+    if (options?.cb) {
       isLoading.value = true
 
       const response = await options.cb()

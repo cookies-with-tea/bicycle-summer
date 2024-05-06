@@ -22,9 +22,53 @@ module.exports = {
     process: true,
   },
 
-  plugins: ['vue', '@typescript-eslint'],
-
+  plugins: ['vue', '@typescript-eslint', 'import'],
   rules: {
+    'import/order': [
+      'warn',
+      {
+        groups: [['builtin', 'external'], 'internal', 'parent', ['sibling', 'index']],
+        pathGroups: [
+          {
+            pattern: 'app/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '#pages/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '#widgets/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '#features/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '#entities/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '#shared/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+          orderImportKind: 'asc',
+        },
+        pathGroupsExcludedImportTypes: ['builtin'],
+      },
+    ],
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
     'no-useless-constructor': 'off',

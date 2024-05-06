@@ -3,7 +3,3 @@
     <slot />
   </div>
 </template>
-
-<script lang="ts" setup>
-const a = ref(false)
-</script>
