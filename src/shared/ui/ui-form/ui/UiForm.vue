@@ -6,7 +6,9 @@
 
 <script lang="ts" setup>
 import type { FormInstance } from 'element-plus'
+
 import { useForm } from '#shared/lib/composables'
+
 import type { UiFormExposeType } from '../types'
 
 // DEBT: Придумать, как типизировать
