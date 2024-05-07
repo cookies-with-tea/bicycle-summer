@@ -46,8 +46,9 @@
 </template>
 
 <script setup lang="ts">
-import { UiIcon, type PaginationType } from '#shared/ui'
 import { ElPagination } from 'element-plus'
+
+import { UiIcon, type PaginationType } from '#shared/ui'
 
 type Props = {
   total: PaginationType['total']
@@ -119,6 +120,7 @@ const handleToLastPageGo = () => {
 </script>
 
 <style lang="scss" scoped>
+// DEBT: Добавить цвета
 .ui-pagination {
   color: var(--color-black);
   display: flex;

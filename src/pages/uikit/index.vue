@@ -36,10 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
-import { userApi, type UserType } from '#entities/user'
 import type { FormRules } from 'element-plus'
+
+import { userApi, type UserType } from '#entities/user'
+
 import { FORM_RULES, ROUTES } from '#shared/constants'
+import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
+
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
