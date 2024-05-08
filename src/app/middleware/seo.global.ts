@@ -1,4 +1,4 @@
-import { ROUTE_SEO_DATA } from '#shared/contants'
+import { ROUTE_SEO_DATA } from '../../shared/constants'
 
 export default defineNuxtRouteMiddleware((to) => {
   const nuxtApp = useNuxtApp()

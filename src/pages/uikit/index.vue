@@ -5,6 +5,9 @@
     <h1>Текст h1</h1>
     <h2>Текст h2</h2>
 
+    <h1 class="bebas">Текст h1 Bebas</h1>
+    <h2 class="bebas">Текст h2 Bebas</h2>
+
     <div class="box">
       <ui-icon name="bike" />
 
@@ -35,7 +38,7 @@
 import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType } from '#shared/ui'
 import { userApi, type UserType } from '#entities/user'
 import type { FormRules } from 'element-plus'
-import { FORM_RULES, ROUTES } from '#shared/contants'
+import { FORM_RULES, ROUTES } from '#shared/constants'
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
@@ -65,5 +68,9 @@ const onError = (error: Error) => {
 
 .flex {
   display: flex;
+}
+
+.bebas {
+  font-family: $font-beba;
 }
 </style>
