@@ -1,5 +1,5 @@
 <template>
-  <el-form-item class="ui-form-item" :prop="props?.prop" :error="formErrors[props?.prop ?? '']" v-bind="$attrs">
+  <lazy-el-form-item class="ui-form-item" :prop="props?.prop" :error="formErrors[props?.prop ?? '']" v-bind="$attrs">
     <template #default>
       <slot name="default" />
     </template>
@@ -13,12 +13,12 @@
         </div>
       </slot>
     </template>
-  </el-form-item>
+  </lazy-el-form-item>
 </template>
 
 <script setup lang="ts">
-import { UiIcon } from '#shared/ui'
 import { useFormErrors } from '#shared/lib/composables'
+import { UiIcon } from '#shared/ui'
 
 type Props = {
   prop?: string

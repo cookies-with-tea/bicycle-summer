@@ -1,6 +1,6 @@
 @use 'assets/styles/additionals/variables' as *;
 
-@use 'element-plus/theme-chalk/src/common/var' with (
+@forward 'element-plus/theme-chalk/src/common/var' with (
   $sm: 320px,
   $md: $breakpoint--md,
   $lg: $breakpoint--lg,

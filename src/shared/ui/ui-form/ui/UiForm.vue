@@ -1,7 +1,7 @@
 <template>
-  <el-form ref="formRef" class="ui-form" v-bind="$attrs" @submit.prevent="handleFormSubmit">
+  <lazy-el-form ref="formRef" class="ui-form" v-bind="$attrs" @submit.prevent="handleFormSubmit">
     <slot />
-  </el-form>
+  </lazy-el-form>
 </template>
 
 <script lang="ts" setup>
@@ -16,7 +16,7 @@ type Props = {
   action?: () => Promise<unknown>
   onError?: (error: Error) => void
   onSuccess?: (data: any) => void
-  errors?: Record<string, string[]>[]
+  errors?: Array<Record<string, Array<string>>>
   notification?:
     | {
         title?: string

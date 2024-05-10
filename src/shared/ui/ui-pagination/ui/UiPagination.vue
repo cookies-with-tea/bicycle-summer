@@ -46,8 +46,6 @@
 </template>
 
 <script setup lang="ts">
-import { ElPagination } from 'element-plus'
-
 import { UiIcon, type PaginationType } from '#shared/ui'
 
 type Props = {
@@ -66,7 +64,8 @@ const modelValue = defineModel<PaginationType['page']>({
 const props = defineProps<Props>()
 const emits = defineEmits<Emits>()
 
-const paginationRef = ref<InstanceType<typeof ElPagination>>()
+// DEBT: Если добавить имопрт ElPagination, то стили будут пропадать. Надо типизировать.
+const paginationRef = ref()
 const doubleArrowPrev = ref<Element>()
 const doubleArrowNext = ref<Element>()
 

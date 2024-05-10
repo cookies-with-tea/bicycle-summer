@@ -5,7 +5,7 @@ export const useFormErrors = () => {
     formErrors.value = {}
   }
 
-  const setFormErrors = (errors: Record<string, string[]>[]) => {
+  const setFormErrors = (errors: Array<Record<string, Array<string>>>) => {
     const newErrors: Record<string, string> = {}
 
     Object.entries(errors[0]).forEach(([field, errors]) => {

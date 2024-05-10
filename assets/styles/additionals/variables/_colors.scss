@@ -1,11 +1,37 @@
 @use 'sass:color';
 
-$color--black: #111;
+$color--black: #101010;
+$color--banner: #131313;
+$color--dark: #34312d;
+$color--dark-grey: #2e2e2e;
+$color--grey-1: #4c4c4c;
+$color--grey-2: #777;
+$color--grey-3: #e5e5e5;
+$color--light-grey: #b3b3b3;
+$color--background: #f8f8f8;
 $color--white: #fff;
+$color--orange: #f57520;
+$color--orange-2: #eb6b16;
+$color--orange-3: #e1610c;
+$color--orange-4: #d75702;
 $color--red: #f53a20;
+$color--green: #4d932c;
 
 $colors: (
   black: $color--black,
+  banner: $color--banner,
+  dark: $color--dark,
+  dark-grey: $color--dark-grey,
+  grey-1: $color--grey-1,
+  grey-2: $color--grey-2,
+  grey-3: $color--grey-3,
+  light-grey: $color--light-grey,
+  background: $color--background,
   white: $color--white,
+  orange: $color--orange,
+  orange-2: $color--orange-2,
+  orange-3: $color--orange-3,
+  orange-4: $color--orange-4,
   red: $color--red,
+  green: $color--green,
 );

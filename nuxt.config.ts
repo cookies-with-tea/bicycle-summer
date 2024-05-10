@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     '#entities': fileURLToPath(new URL('./src/entities', import.meta.url)),
     '#shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
   },
-  modules: ['@element-plus/nuxt', '@nuxt/image', 'nuxt-svgo', '@nuxtjs/device'],
+  modules: ['@element-plus/nuxt', '@nuxt/image', 'nuxt-svgo', '@nuxtjs/device', '@vueuse/motion/nuxt'],
   image: {
     quality: 80,
     format: ['webp'],
@@ -108,9 +108,9 @@ export default defineNuxtConfig({
     build: { chunkSizeWarningLimit: 1600 },
   },
   hooks: {
-    'pages:extend'(pages: NuxtPage[]) {
-      function removePagesMatching(pathPattern: RegExp, filePattern: RegExp, pages: NuxtPage[] = []) {
-        const pagesToRemove: NuxtPage[] = []
+    'pages:extend'(pages: Array<NuxtPage>) {
+      function removePagesMatching(pathPattern: RegExp, filePattern: RegExp, pages: Array<NuxtPage> = []) {
+        const pagesToRemove: Array<NuxtPage> = []
 
         for (const page of pages) {
           if (pathPattern.test(page.path) || (page.file && filePattern.test(page.file))) {

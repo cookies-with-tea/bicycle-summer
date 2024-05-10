@@ -6,7 +6,7 @@ export type UseFormOptionsType = {
   cb?: any
   onError?: (error: Error) => void
   onSuccess?: (data: any) => void
-  errors?: Record<string, string[]>[]
+  errors?: Array<Record<string, Array<string>>>
   notification?:
     | {
         title?: string

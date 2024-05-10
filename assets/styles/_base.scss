@@ -1,7 +1,7 @@
 :root {
   --container-max: 100%;
   --container-max-header-footer: 100%;
-  --container-padding: 16px;
+  --container-padding: 20px;
   --font-size--xl: 20px;
   --font-size--lg: 16px;
   --font-size--md: 14px;
@@ -19,18 +19,18 @@
   --line-height--primary: 1.4;
   --line-height--secondary: 1.6;
   --el-color-danger: var(--color-red);
-  --layout-padding-bottom: 40px;
+  --layout-padding-bottom: 65px;
 
   @include generate-color-root-variables;
   @include responsive(md) {
     --container-padding: 32px;
-    --layout-padding-bottom: 60px;
+    --layout-padding-bottom: 72px;
   }
   @include responsive(xl) {
     --container-max: #{$breakpoint--xl};
     --container-max-header-footer: #{$breakpoint--xl + 200px};
     --container-padding: 56px;
-    --layout-padding-bottom: 100px;
+    --layout-padding-bottom: 160px;
   }
 }
 
@@ -50,6 +50,11 @@ body,
 
 body {
   color: var(--color-black);
+}
+
+mark {
+  color: var(--color-orange);
+  background: none;
 }
 
 h1,
@@ -126,7 +131,6 @@ h5,
 .link {
   border: unset;
   text-decoration: none;
-  color: var(--color-blue-2);
   background-color: transparent;
   cursor: pointer;
   padding: 0;
