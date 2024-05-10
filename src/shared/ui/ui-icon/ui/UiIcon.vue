@@ -1,5 +1,5 @@
 <template>
-  <component :is="`ui-${props.name}`" class="a-icon" :class="iconClass" width="1em" height="1em" aria-hidden="true" />
+  <component :is="`ui-${props.name}`" class="ui-icon" :class="iconClass" width="1em" height="1em" aria-hidden="true" />
 </template>
 
 <script setup lang="ts">
@@ -16,12 +16,12 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const iconClass = computed(() => {
-  return [{ 'a-icon--reversed': props.reverse }, `a-icon--${props.name}`]
+  return [{ 'ui-icon--reversed': props.reverse }, `ui-icon--${props.name}`]
 })
 </script>
 
 <style lang="scss" scoped>
-.a-icon {
+.ui-icon {
   position: relative;
   display: inline-block;
   flex-shrink: 0;

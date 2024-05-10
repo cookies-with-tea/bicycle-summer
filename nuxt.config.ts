@@ -1,8 +1,8 @@
-import type { NuxtPage } from 'nuxt/schema'
-import { fileURLToPath } from 'node:url'
-import compression from 'vite-plugin-compression2'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import type { NuxtPage } from 'nuxt/schema'
 import { typedIconPlugin } from 'typed-icon-template'
+import compression from 'vite-plugin-compression2'
 
 const typedIconPluginConfig = typedIconPlugin({
   iconsPath: path.join(process.cwd(), './assets/icons'),

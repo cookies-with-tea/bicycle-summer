@@ -5,8 +5,8 @@
     <h1>Текст h1</h1>
     <h2>Текст h2</h2>
 
-    <h1 class="bebas">Текст h1 Bebas</h1>
-    <h2 class="bebas">Текст h2 Bebas</h2>
+    <h3 class="bebas">Текст h1 Bebas</h3>
+    <h4 class="bebas">Текст h2 Bebas</h4>
 
     <div class="box">
       <ui-icon name="bike" />
@@ -31,14 +31,18 @@
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
       </ui-form>
     </div>
+
+    <div class="box">
+      <ui-pagination :page="pagination.page" :total="pagination.total" :limit="pagination.limit" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType } from '#shared/ui'
 import { userApi, type UserType } from '#entities/user'
-import type { FormRules } from 'element-plus'
 import { FORM_RULES, ROUTES } from '#shared/constants'
+import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
+import type { FormRules } from 'element-plus'
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
@@ -47,6 +51,11 @@ const rules: FormRules = {
 
 const formData = ref({
   name: '',
+})
+const pagination = ref<PaginationType>({
+  page: 1,
+  limit: 10,
+  total: 100,
 })
 
 const getData = async (data: UserType) => {

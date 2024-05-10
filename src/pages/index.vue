@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ROUTES } from '../shared/constants'
+import { ROUTES } from '#shared/constants'
 
 definePageMeta({
   redirect: { name: ROUTES.UIKIT.name },

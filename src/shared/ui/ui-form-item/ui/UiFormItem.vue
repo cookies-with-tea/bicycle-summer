@@ -1,5 +1,5 @@
 <template>
-  <el-form-item class="ui-form-item" :prop="props.prop" :error="formErrors[props?.prop ?? '']" v-bind="$attrs">
+  <el-form-item class="ui-form-item" :prop="props?.prop" :error="formErrors[props?.prop ?? '']" v-bind="$attrs">
     <template #default>
       <slot name="default" />
     </template>
