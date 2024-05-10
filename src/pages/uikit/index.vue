@@ -5,6 +5,9 @@
     <h1>Текст h1</h1>
     <h2>Текст h2</h2>
 
+    <h3 class="bebas">Текст h1 Bebas</h3>
+    <h4 class="bebas">Текст h2 Bebas</h4>
+
     <div class="box">
       <ui-icon name="bike" />
 
@@ -36,13 +39,10 @@
 </template>
 
 <script setup lang="ts">
-import type { FormRules } from 'element-plus'
-
 import { userApi, type UserType } from '#entities/user'
-
 import { FORM_RULES, ROUTES } from '#shared/constants'
 import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
-
+import type { FormRules } from 'element-plus'
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
@@ -77,5 +77,9 @@ const onError = (error: Error) => {
 
 .flex {
   display: flex;
+}
+
+.bebas {
+  font-family: $font-beba;
 }
 </style>

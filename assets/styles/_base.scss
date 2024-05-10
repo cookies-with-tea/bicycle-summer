@@ -6,11 +6,11 @@
   --font-size--lg: 16px;
   --font-size--md: 14px;
   --font-size--sm: 12px;
-  --font-size--h1: 24px;
-  --font-size--h2: 20px;
-  --font-size--h3: 16px;
-  --font-size--h4: 14px;
-  --font-size--h5: 12px;
+  --font-size--h1: 110px;
+  --font-size--h2: 64px;
+  --font-size--h3: 40px;
+  --font-size--h4: 40px;
+  --font-size--h5: 24px;
   --font-size--icon-xs: 16px;
   --font-size--icon-sm: 20px;
   --font-size--icon-md: 24px;
@@ -35,7 +35,7 @@
 }
 
 html {
-  font-family: $font;
+  font-family: $font-inter;
   font-weight: 400;
   font-size: 16px;
   line-height: var(--line-height--primary);
