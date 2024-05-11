@@ -7,7 +7,7 @@
 
     <ui-slider :breakpoints :slides="aboutData?.hero.useful">
       <template #slide="{ slide }">
-        <div v-ripple="{ color: 'rgba(255, 255, 255, 0.4)' }" class="about-hero__slide">
+        <div v-ripple="{ color: 'var(--color-orange)' }" class="about-hero__slide">
           <p class="about-hero__slide-title"> {{ slide.title }} </p>
           <p class="about-hero__slide-description">
             {{ slide.description }}
@@ -65,6 +65,8 @@ const breakpoints: SwiperOptions['breakpoints'] = {
     line-height: 38.4px;
     letter-spacing: 0.24px;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
   }
 
   &__slide-description {
@@ -73,6 +75,8 @@ const breakpoints: SwiperOptions['breakpoints'] = {
     font-size: 16px;
     line-height: 25.6px;
     color: var(--color-grey-3);
+    position: relative;
+    z-index: 1;
 
     @include truncate(5);
 
@@ -88,6 +92,8 @@ const breakpoints: SwiperOptions['breakpoints'] = {
     display: block;
     margin-top: 24px;
     color: var(--color-white);
+    position: relative;
+    z-index: 1;
   }
 
   :deep(.ui-slider__slide) {
@@ -109,6 +115,7 @@ const breakpoints: SwiperOptions['breakpoints'] = {
     height: 176px;
     color: var(--color-black);
     bottom: -16px;
+    z-index: 1;
   }
 
   h2 {

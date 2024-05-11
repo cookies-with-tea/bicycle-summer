@@ -9,7 +9,7 @@ const getOne = async () => {
       method: 'get',
     },
     ABOUT_MOCK_DATA,
-    0,
+    0
   )
 }
 
