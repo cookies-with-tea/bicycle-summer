@@ -1,7 +1,7 @@
 <template>
   <div class="about-page">
-    <div class="container">
-      <div class="about-page__header-container">
+    <div class="about-page__header-container">
+      <div class="container">
         <h1>О нас</h1>
       </div>
     </div>
@@ -26,6 +26,7 @@ await getAboutData()
     font-size: 50px;
     line-height: 52.2px;
     letter-spacing: 5px;
+    color: var(--color-white);
 
     @include responsive(lg) {
       font-size: 64px;
@@ -36,6 +37,7 @@ await getAboutData()
   // DEBT: После добавления хлебных крошек изменить padding
   &__header-container {
     padding: 70px 0 78px;
+    background: url('/about/about-bg.png');
 
     @include responsive(lg) {
       padding: 134px 0 65px;
