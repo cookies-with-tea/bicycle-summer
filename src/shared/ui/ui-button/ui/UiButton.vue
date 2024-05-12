@@ -1,7 +1,9 @@
 <template>
   <component :is="props.as" v-bind="$attrs" :class="uiButton">
     <slot v-if="$slots.suffix" name="suffix" />
+
     <slot />
+
     <slot v-if="$slots.postfix" name="postfix" />
   </component>
 </template>
@@ -13,7 +15,6 @@ import { NuxtLink } from '#components'
 type Props = {
   as?: 'button' | typeof NuxtLink
   appearance?: 'primary' | 'secondary' | 'text'
-  size?: 'sm' | 'lg'
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -23,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const uiButton = computed(() => {
-  return ['ui-button', `ui-button--${props.appearance}`, `ui-button--${props.size}`]
+  return ['ui-button', `ui-button--${props.appearance}`]
 })
 </script>
 
@@ -36,7 +37,7 @@ const uiButton = computed(() => {
   text-align: center;
   justify-content: center;
   border-radius: 10px;
-  padding: 16px 80px;
+  padding: 16px 12px;
   text-decoration: none;
 
   &:hover {
