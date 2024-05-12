@@ -8,6 +8,8 @@ export { default as UiPagination } from './ui-pagination'
 
 export { default as UiSlider } from './ui-slider'
 
+export { default as UiButton } from './ui-button'
+
 export * from './ui-form/types'
 
 export * from './ui-pagination/types'
