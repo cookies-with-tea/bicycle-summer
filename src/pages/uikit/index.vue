@@ -28,6 +28,10 @@
           <el-input v-model="formData.name" placeholder="Hi" />
         </ui-form-item>
 
+        <ui-form-item error="some error" prop="surname">
+          <ui-input v-model="formData.surname" title="Фамилия" placeholder="your surname" />
+        </ui-form-item>
+
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
       </ui-form>
     </div>
@@ -49,9 +53,17 @@
 <script setup lang="ts">
 import { userApi, type UserType } from '#entities/user'
 import { FORM_RULES, ROUTES } from '#shared/constants'
-import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
+import {
+  UiForm,
+  UiFormItem,
+  UiIcon,
+  UiButton,
+  UiInput,
+  UiPagination,
+  type UiFormInstanceType,
+  type PaginationType,
+} from '#shared/ui'
 import type { FormRules } from 'element-plus'
-import UiButton from '#shared/ui/ui-button/ui/UiButton.vue'
 import { NuxtLink } from '#components'
 const formRef = ref<UiFormInstanceType>()
 
@@ -61,6 +73,7 @@ const rules: FormRules = {
 
 const formData = ref({
   name: '',
+  surname: '',
 })
 const pagination = ref<PaginationType>({
   page: 1,

@@ -105,4 +105,18 @@ const { formErrors } = useFormErrors()
     margin-bottom: 16px;
   }
 }
+
+:deep(.ui-input) {
+  &.ui-input {
+    .ui-input {
+      &__title {
+        color: var(--color-red);
+      }
+
+      &__inner {
+        border: 1px solid var(--color-red);
+      }
+    }
+  }
+}
 </style>

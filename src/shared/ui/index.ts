@@ -8,6 +8,8 @@ export { default as UiPagination } from './ui-pagination'
 
 export { default as UiButton } from './ui-button'
 
+export { default as UiInput } from './ui-input'
+
 export * from './ui-form/types'
 
 export * from './ui-pagination/types'
