@@ -1,5 +1,5 @@
 <template>
-  <div v-if="props?.slides?.length" class="ui-slider">
+  <div v-if="props?.slides?.length" :class="['ui-slider', props?.class]">
     <swiper slides-per-view="auto" v-bind="$attrs">
       <template v-for="(slide, index) in props.slides" :key="index">
         <swiper-slide v-if="slots?.slide" class="ui-slider__slide">
@@ -19,6 +19,7 @@ import 'swiper/css'
 type Props = {
   slides?: Array<T>
   fullwidth?: boolean
+  class?: string
 }
 
 type Slots = {

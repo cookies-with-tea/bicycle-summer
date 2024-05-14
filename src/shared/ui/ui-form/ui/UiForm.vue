@@ -7,8 +7,9 @@
 <script lang="ts" setup>
 import type { FormInstance } from 'element-plus'
 
-import { useForm } from '#shared/lib/composables'
+import type { ErrorsResponseType } from '#shared/types'
 
+import { useForm } from '../composables'
 import type { UiFormExposeType } from '../types'
 
 // DEBT: Придумать, как типизировать
@@ -16,7 +17,7 @@ type Props = {
   action?: () => Promise<unknown>
   onError?: (error: Error) => void
   onSuccess?: (data: any) => void
-  errors?: Array<Record<string, Array<string>>>
+  errors?: ErrorsResponseType
   notification?:
     | {
         title?: string
@@ -39,7 +40,7 @@ const { submit, isLoading } = useForm({
     props?.onSuccess?.(data)
   },
   errors: props?.errors,
-  notification: props.notification,
+  notification: props?.notification ?? false,
 })
 
 const handleFormSubmit = async () => {

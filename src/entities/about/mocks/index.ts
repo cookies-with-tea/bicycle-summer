@@ -1,3 +1,5 @@
+import type { SocialNetworksResponseTypeType } from '#entities/about'
+
 export const ABOUT_MOCK_DATA = {
   h1: 'О нас',
   hero: {
@@ -30,3 +32,26 @@ export const ABOUT_MOCK_DATA = {
     ],
   },
 }
+
+export const SOCIAL_NETWORKS_MOCK_DATA: SocialNetworksResponseTypeType = [
+  {
+    link: 'https://google.com',
+    iconName: 'ok',
+  },
+  {
+    link: 'https://google.com',
+    iconName: 'vk',
+  },
+  {
+    link: 'https://google.com',
+    iconName: 'tg',
+  },
+  {
+    link: 'https://google.com',
+    iconName: 'whatsapp',
+  },
+  {
+    link: 'https://google.com',
+    iconName: 'viber',
+  },
+]

@@ -1,12 +1,8 @@
 import type { AvailableRouterMethod, NitroFetchOptions, NitroFetchRequest } from 'nitropack'
 
-import type { AsyncDataOptions } from '#app/composables'
+import type { ResponseType } from '#shared/types'
 
-type ResponseType<T> = {
-  data: T
-  errors: Array<Record<string, Array<string>>>
-  messages: Array<string>
-}
+import type { AsyncDataOptions } from '#app/composables'
 
 type FetchWrapOptionsType<T = unknown> = {
   url: string

@@ -6,38 +6,39 @@
       </div>
     </div>
 
-    <about-hero />
+    <div class="container">
+      <about-hero />
+    </div>
+
+    <about-words />
+
+    <!--    parallax bg-->
   </div>
 </template>
 
 <script setup lang="ts">
-import { AboutHero } from '#pages/about/ui'
+import { AboutHero, AboutWords } from '#pages/about/ui'
 
 import { useAbout } from '#entities/about'
 
-const { getAboutData } = useAbout()
+const { getAboutData, getSocialNetworksData } = useAbout()
 
-await getAboutData()
+await Promise.all([getAboutData(), getSocialNetworksData()])
 </script>
 
 <style lang="scss" scoped>
 .about-page {
   h1 {
-    font-size: 50px;
-    line-height: 52.2px;
-    letter-spacing: 5px;
     color: var(--color-white);
 
-    @include responsive(lg) {
-      font-size: 64px;
-      line-height: 78.72px;
-    }
+    @include h2();
   }
 
   // DEBT: После добавления хлебных крошек изменить padding
   &__header-container {
     padding: 70px 0 78px;
-    background: url('/about/about-bg.png');
+    background: url('/about/about-bg.png') center 0 no-repeat;
+    background-size: 100% 100%;
 
     @include responsive(lg) {
       padding: 134px 0 65px;

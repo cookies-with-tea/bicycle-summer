@@ -30,6 +30,34 @@
   }
 }
 
+@mixin h1() {
+  @include h2;
+
+  @include responsive(lg) {
+    font-size: var(--font-size--h1);
+    line-height: 1.2;
+    letter-spacing: 3px;
+  }
+}
+
+@mixin h2() {
+  font-size: 50px;
+  line-height: 1.05;
+  letter-spacing: 2px;
+
+  @include responsive(lg) {
+    font-size: var(--font-size--h2);
+    line-height: 1.23;
+    letter-spacing: 3.2px;
+  }
+}
+
+@mixin text-desk-mob-16($font-weight: 400) {
+  font-weight: $font-weight;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 @mixin truncate($lines: 3, $truncation-boundary: 100%, $display: -webkit-box) {
   max-width: $truncation-boundary;
   display: $display;

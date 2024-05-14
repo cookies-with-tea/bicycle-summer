@@ -10,3 +10,10 @@
     @warn 'Not found key `#{$key}` in map `#{$map}`';
   }
 }
+
+@function responsive-size($initial-height, $final-height, $start-breakpoint, $end-breakpoint) {
+  @return calc(
+    $initial-height + (100vw - $start-breakpoint) *
+      (($final-height - $initial-height) / ($end-breakpoint - $start-breakpoint))
+  );
+}

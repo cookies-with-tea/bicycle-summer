@@ -5,7 +5,7 @@
        — это не просто средство передвижения!
     </h2>
 
-    <ui-slider :breakpoints :slides="aboutData?.hero.useful">
+    <ui-slider class="about-hero__slider" :breakpoints :slides="aboutData?.hero.useful">
       <template #slide="{ slide }">
         <div v-ripple="{ color: 'var(--color-orange)' }" class="about-hero__slide">
           <p class="about-hero__slide-title"> {{ slide.title }} </p>
@@ -23,34 +23,24 @@
 </template>
 
 <script lang="ts" setup>
-import type { SwiperOptions } from 'swiper/types'
-
 import { useAbout } from '#entities/about'
 
 import { UiIcon, UiSlider } from '#shared/ui'
 
-const { aboutData } = useAbout()
-
-const breakpoints: SwiperOptions['breakpoints'] = {
-  320: {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-  },
-  768: {
-    spaceBetween: 16,
-  },
-  1200: {
-    spaceBetween: 40,
-  },
-  1440: {
-    spaceBetween: 40,
-  },
-}
+const { aboutData, breakpoints } = useAbout()
 </script>
 
 <style lang="scss" scoped>
 .about-hero {
   margin-top: 32px;
+
+  &__slider {
+    margin-top: 24px;
+
+    @include responsive(lg) {
+      margin-top: 80px;
+    }
+  }
 
   &__slide {
     padding: 32px 24px;
@@ -70,10 +60,8 @@ const breakpoints: SwiperOptions['breakpoints'] = {
   }
 
   &__slide-description {
-    font-weight: 300;
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 25.6px;
+    @include text-desk-mob-16(300);
+
     color: var(--color-grey-3);
     position: relative;
     z-index: 1;
@@ -119,15 +107,7 @@ const breakpoints: SwiperOptions['breakpoints'] = {
   }
 
   h2 {
-    font-size: 50px;
-    line-height: 52.2px;
-    letter-spacing: 5px;
-
-    @include responsive(lg) {
-      font-size: 110px;
-      line-height: 135.3px;
-      letter-spacing: 1.2px;
-    }
+    @include h1();
   }
 
   @include responsive(lg) {

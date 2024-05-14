@@ -1,5 +1,6 @@
-import { useFormErrors } from '#shared/lib/composables'
-import type { UseFormOptionsType } from '#shared/lib/composables/use-form/types'
+import type { UseFormOptionsType } from '../types'
+
+import { useFormErrors } from './use-form-errors.ts'
 
 const showNotification = (notification: UseFormOptionsType['notification']) => {
   if (typeof notification === 'undefined') return

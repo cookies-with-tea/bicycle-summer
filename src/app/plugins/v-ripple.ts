@@ -69,6 +69,9 @@ const removeRipple = (el: HTMLDivElement, binding: DirectiveBinding<RippleDirect
  * Несовместим с isHide: false.
  * Если isHide: true, то при каждом наведении добавляет новый ripple эффект
  * Из-за чего будет небольшое наслоение
+ *
+ * DEBT: Добавить duration
+ * Будет менять скорость появления кружочков
  */
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('ripple', {

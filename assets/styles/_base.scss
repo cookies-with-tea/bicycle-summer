@@ -69,18 +69,18 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-weight: 800;
+  font-family: $font-beba;
+  font-weight: 400;
 }
 
 h1,
 .h1 {
-  font-size: var(--font-size--h1);
+  @include h1;
 }
 
 h2,
 .h2 {
-  font-size: var(--font-size--h2);
-  line-height: var(--line-height--secondary);
+  @include h2;
 }
 
 h3,
@@ -129,6 +129,7 @@ h5,
 }
 
 .link {
+  width: fit-content;
   border: unset;
   text-decoration: none;
   background-color: transparent;

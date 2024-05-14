@@ -9,7 +9,7 @@
         <div class="ui-form-item__error">
           <ui-icon class="ui-form-item__error-icon" name="close-circle" />
 
-          <span class="ui-form-item__error-msg">{{ error }}</span>
+          <span class="ui-form-item__error-message">{{ error }}</span>
         </div>
       </slot>
     </template>
@@ -17,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { useFormErrors } from '#shared/lib/composables'
 import { UiIcon } from '#shared/ui'
+import { useFormErrors } from '#shared/ui/ui-form/composables'
 
 type Props = {
   prop?: string
@@ -35,15 +35,21 @@ const { formErrors } = useFormErrors()
   margin-bottom: 8px;
   width: 100%;
 
+  :deep(.el-form-item__content) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &__error {
     display: flex;
     line-height: var(--line-height--primary);
-    margin-top: 8px;
+    margin-top: 4px;
     align-items: center;
   }
 
-  &__error-msg {
+  &__error-message {
     font-size: var(--font-size--sm);
+    color: var(--color-red);
   }
 
   &__error-icon {
@@ -76,11 +82,11 @@ const { formErrors } = useFormErrors()
       border-color: var(--color-red);
     }
 
-    // :deep(.s-input__label) {
+    // :deep(.ui-input__label) {
     //   background-color:
     // }
 
-    :deep(.s-date-picker) {
+    :deep(.ui-date-picker) {
       box-shadow: 0 0 0 1px var(--color-red) inset;
       background: var(--color-light-red);
 
@@ -92,9 +98,9 @@ const { formErrors } = useFormErrors()
   }
 
   &.is-required {
-    :deep(.s-input__label),
-    :deep(.s-select__label),
-    :deep(.s-autocomplete__label) {
+    :deep(.ui-input__label),
+    :deep(.ui-select__label),
+    :deep(.ui-autocomplete__label) {
       &::after {
         content: '*';
       }

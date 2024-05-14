@@ -14,3 +14,10 @@ export type AboutResponseType = {
   h1: string
   hero: AboutHeroType
 }
+
+export type SocialNetworkType = {
+  iconName: 'ok' | 'vk' | 'tg' | 'whatsapp' | 'viber'
+  link: string
+}
+
+export type SocialNetworksResponseTypeType = Array<SocialNetworkType>

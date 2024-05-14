@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+
 import { NuxtLink } from '#components'
 
 type Props = {

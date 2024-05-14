@@ -1,8 +1,4 @@
-type ResponseType<T> = {
-  data: T | null
-  errors: Array<Record<string, Array<string>>>
-  messages: Array<string>
-}
+import type { ResponseType } from '#shared/types'
 
 export const useFakeFetch = async <T = unknown>(
   url: string,
@@ -28,6 +24,7 @@ export const useFakeFetch = async <T = unknown>(
     setTimeout(() => {
       if (shouldReturnError) {
         resolve({
+          // @ts-ignore
           data: null,
           errors: fakeData.errors,
           messages: fakeData.messages,

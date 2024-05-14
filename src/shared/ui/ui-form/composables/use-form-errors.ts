@@ -1,3 +1,5 @@
+import type { ErrorsResponseType } from '#shared/types'
+
 const formErrors = ref<Record<string, string>>({})
 
 export const useFormErrors = () => {
@@ -5,7 +7,7 @@ export const useFormErrors = () => {
     formErrors.value = {}
   }
 
-  const setFormErrors = (errors: Array<Record<string, Array<string>>>) => {
+  const setFormErrors = (errors: ErrorsResponseType) => {
     const newErrors: Record<string, string> = {}
 
     Object.entries(errors[0]).forEach(([field, errors]) => {
