@@ -11,9 +11,9 @@
   }
 }
 
-@function responsive-size($initial-height, $final-height, $start-breakpoint, $end-breakpoint) {
+@function responsive-size($initial-size, $final-size, $start-breakpoint, $end-breakpoint) {
   @return calc(
-    $initial-height + (100vw - $start-breakpoint) *
-      (($final-height - $initial-height) / ($end-breakpoint - $start-breakpoint))
+    $initial-size + (100vw - $start-breakpoint) *
+      (($final-size - $initial-size) / ($end-breakpoint - $start-breakpoint))
   );
 }

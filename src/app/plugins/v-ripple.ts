@@ -89,9 +89,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     unmounted(el, binding) {
       if (!binding.value?.enabled === false) return
 
-      el.removeEventListener('mouseenter', (e) => createRipple(e, binding))
+      el.removeEventListener('mouseenter', (e) => {
+        createRipple(e, binding)
+      })
 
-      el.removeEventListener('mouseleave', () => removeRipple(el, binding))
+      el.removeEventListener('mouseleave', () => {
+        removeRipple(el, binding)
+      })
     },
   })
 })
