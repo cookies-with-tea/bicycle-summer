@@ -64,7 +64,7 @@ const modelValue = defineModel<PaginationType['page']>({
 const props = defineProps<Props>()
 const emits = defineEmits<Emits>()
 
-// DEBT: Если добавить имопрт ElPagination, то стили будут пропадать. Надо типизировать.
+// DEBT: Если добавить импорт ElPagination, то стили будут пропадать. Надо типизировать.
 const paginationRef = ref()
 const doubleArrowPrev = ref<Element>()
 const doubleArrowNext = ref<Element>()
