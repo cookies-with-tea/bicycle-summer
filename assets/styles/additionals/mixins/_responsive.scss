@@ -2,8 +2,8 @@
 @use '../variables/index.scss' as *;
 
 @mixin responsive($key, $map: $breakpoints) {
-  @if map-has-key($map, $key) {
-    @media screen and #{map-get($map, $key)} {
+  @if map.has-key($map, $key) {
+    @media screen and #{map.get($map, $key)} {
       @content;
     }
   } @else {
