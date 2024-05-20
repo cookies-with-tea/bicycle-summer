@@ -18,7 +18,7 @@ $color--orange-4: #d75702;
 $color--red: #f53a20;
 $color--green: #4d932c;
 
-$color--red-white-10: color.mix($color--red, $color--white, $weight: 10);
+$color--red-white-10: color.mix($color--red, $color--white, $weight: 10%);
 
 $colors: (
   black: $color--black,
