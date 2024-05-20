@@ -12,15 +12,16 @@
 
     <about-words />
 
-    <!--    parallax bg-->
+    <about-best-bicycles />
+
+    <about-questions />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AboutHero, AboutWords } from '#pages/about/ui'
+import { AboutBestBicycles, AboutHero, AboutQuestions, AboutWords } from '#pages/about/ui'
 
 import { useAbout } from '#entities/about'
-
 const { getAboutData, getSocialNetworksData } = useAbout()
 
 await Promise.all([getAboutData(), getSocialNetworksData()])

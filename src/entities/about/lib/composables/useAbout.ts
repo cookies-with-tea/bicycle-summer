@@ -22,23 +22,23 @@ const breakpoints: SwiperOptions['breakpoints'] = {
 const aboutData = useState<AboutResponseType | undefined>('aboutData', () => undefined)
 const socialNetworks = useState<SocialNetworksResponseTypeType>('socialNetworks', () => [])
 
+const getAboutData = async () => {
+  const data = await aboutApi.getOne()
+
+  if (data.data) {
+    aboutData.value = data.data
+  }
+}
+
+const getSocialNetworksData = async () => {
+  const data = await aboutApi.getSocialNetworks()
+
+  if (data.data) {
+    socialNetworks.value = data.data
+  }
+}
+
 export const useAbout = () => {
-  const getAboutData = async () => {
-    const data = await aboutApi.getOne()
-
-    if (data.data) {
-      aboutData.value = data.data
-    }
-  }
-
-  const getSocialNetworksData = async () => {
-    const data = await aboutApi.getSocialNetworks()
-
-    if (data.data) {
-      socialNetworks.value = data.data
-    }
-  }
-
   onUnmounted(() => {
     aboutData.value = undefined
   })

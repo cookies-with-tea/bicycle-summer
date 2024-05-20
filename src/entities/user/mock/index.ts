@@ -1,4 +1,4 @@
-import type { UserType } from '../types'
+import type { UserType } from '../model'
 
 export const USER_MOCK_DATA: UserType = {
   uuid: '1',

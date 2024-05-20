@@ -1,6 +1,6 @@
-import type { SocialNetworksResponseTypeType } from '#entities/about'
+import type { AboutResponseType, SocialNetworksResponseTypeType } from '#entities/about'
 
-export const ABOUT_MOCK_DATA = {
+export const ABOUT_MOCK_DATA: AboutResponseType = {
   h1: 'О нас',
   hero: {
     h2: '<mark>Велосипед</mark> – это не просто средство передвижения!',
@@ -30,6 +30,64 @@ export const ABOUT_MOCK_DATA = {
         uuid: 'qwerty-1234-3',
       },
     ],
+  },
+  best: {
+    dealers: {
+      title: 'Мы — официальные дилеры лучших брендов:',
+      items: [
+        {
+          title: 'Велосипеды',
+          uuid: 'qwerty-1235',
+          slug: 'velocipedy',
+          brands: [
+            {
+              title: 'BMC',
+              slug: 'bmc',
+              uuid: 'qwerty-1233-1',
+            },
+            {
+              title: 'Cervelo',
+              slug: 'cervelo',
+              uuid: 'qwerty-1233-2',
+            },
+          ],
+        },
+        {
+          title: 'Аксессуары',
+          uuid: 'qwerty-1235-2',
+          slug: 'aksessuari',
+          brands: [
+            {
+              title: 'SKS',
+              slug: 'sks',
+              uuid: 'qwerty-1233-1',
+            },
+            {
+              title: 'Selle Royal',
+              slug: 'selle-royal',
+              uuid: 'qwerty-1233-2',
+            },
+          ],
+        },
+        {
+          title: 'Запчасти',
+          uuid: 'qwerty-1235-3',
+          slug: 'zapchasty',
+          brands: [
+            {
+              title: 'SKS',
+              slug: 'sks',
+              uuid: 'qwerty-1233-1',
+            },
+            {
+              title: 'Selle Royal',
+              slug: 'selle-royal',
+              uuid: 'qwerty-1233-2',
+            },
+          ],
+        },
+      ],
+    },
   },
 }
 

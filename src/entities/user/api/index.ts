@@ -1,5 +1,5 @@
 import { USER_MOCK_DATA } from '../mock'
-import type { UserType } from '../types'
+import type { UserType } from '../model'
 
 const getMe = async (): Promise<UserType> => {
   return new Promise((resolve) => {
