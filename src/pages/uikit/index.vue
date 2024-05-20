@@ -37,7 +37,11 @@
         </ui-form-item>
 
         <ui-form-item>
-          <ui-input appearance="secondary" v-model="formData.surname" title="Что-то там" :placeholder="'подпись'" />
+          <ui-input appearance="secondary" v-model="formData.surname" title="Что-то там" :placeholder="'подпись'" >
+            <template #suffix>
+              <ui-icon name="search"  />
+            </template>
+          </ui-input>
         </ui-form-item>
 
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
