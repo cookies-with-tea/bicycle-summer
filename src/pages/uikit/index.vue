@@ -29,7 +29,15 @@
         </ui-form-item>
 
         <ui-form-item error="some error" prop="surname">
-          <ui-input v-model="formData.surname" title="Фамилия" placeholder="your surname" />
+          <ui-input v-model="formData.surname" title="Фамилия" :placeholder="'your surname'" />
+        </ui-form-item>
+
+        <ui-form-item prop="password">
+          <ui-input v-model="formData.password" title="Пароль" :placeholder="'Пароль'" show-password/>
+        </ui-form-item>
+
+        <ui-form-item>
+          <ui-input appearance="secondary" v-model="formData.surname" title="Что-то там" :placeholder="'подпись'" />
         </ui-form-item>
 
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
@@ -74,6 +82,7 @@ const rules: FormRules = {
 const formData = ref({
   name: '',
   surname: '',
+  password: '',
 })
 const pagination = ref<PaginationType>({
   page: 1,

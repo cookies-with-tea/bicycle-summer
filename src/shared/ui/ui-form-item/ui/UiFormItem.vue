@@ -89,6 +89,20 @@ const { formErrors } = useFormErrors()
         background-color: transparent;
       }
     }
+
+    :deep(.ui-input) {
+      &.ui-input {
+        .ui-input {
+          &__title {
+            color: var(--color-red);
+          }
+
+          &__inner {
+            border: 1px solid var(--color-red);
+          }
+        }
+      }
+    }
   }
 
   &.is-required {
@@ -103,20 +117,6 @@ const { formErrors } = useFormErrors()
 
   @include responsive(md) {
     margin-bottom: 16px;
-  }
-}
-
-:deep(.ui-input) {
-  &.ui-input {
-    .ui-input {
-      &__title {
-        color: var(--color-red);
-      }
-
-      &__inner {
-        border: 1px solid var(--color-red);
-      }
-    }
   }
 }
 </style>
