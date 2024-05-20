@@ -24,24 +24,22 @@
         :on-success="getData"
         :on-error="onError"
       >
-        <ui-form-item prop="name">
-          <el-input v-model="formData.name" placeholder="Hi" />
-        </ui-form-item>
-
         <ui-form-item error="some error" prop="surname">
-          <ui-input v-model="formData.surname" title="Фамилия" :placeholder="'your surname'" />
+          <ui-input v-model="formData.surname" label="Фамилия" placeholder="your surname" />
         </ui-form-item>
 
         <ui-form-item prop="password">
-          <ui-input v-model="formData.password" title="Пароль" :placeholder="'Пароль'" show-password/>
+          <ui-input v-model="formData.password" placeholder="Пароль" show-password label="Пароль" />
         </ui-form-item>
 
-        <ui-form-item>
-          <ui-input appearance="secondary" v-model="formData.surname" title="Что-то там" :placeholder="'подпись'" >
-            <template #suffix>
-              <ui-icon name="search"  />
-            </template>
-          </ui-input>
+        <ui-form-item prop="search">
+          <ui-input
+            v-model="formData.search"
+            appearance="secondary"
+            label="Что-то там"
+            placeholder="подпись"
+            suffix-icon="search"
+          />
         </ui-form-item>
 
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
@@ -63,7 +61,10 @@
 </template>
 
 <script setup lang="ts">
+import type { FormRules } from 'element-plus'
+
 import { userApi, type UserType } from '#entities/user'
+
 import { FORM_RULES, ROUTES } from '#shared/constants'
 import {
   UiForm,
@@ -75,18 +76,22 @@ import {
   type UiFormInstanceType,
   type PaginationType,
 } from '#shared/ui'
-import type { FormRules } from 'element-plus'
+
 import { NuxtLink } from '#components'
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
   name: FORM_RULES.required,
+  surname: FORM_RULES.required,
+  password: FORM_RULES.required,
+  search: FORM_RULES.required,
 }
 
 const formData = ref({
   name: '',
   surname: '',
   password: '',
+  search: '',
 })
 const pagination = ref<PaginationType>({
   page: 1,

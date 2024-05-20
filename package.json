@@ -11,7 +11,7 @@
     "eslint": "eslint . --ext .js,.tsx,.ts",
     "eslint:fix": "bun eslint --fix",
     "stylelint": "stylelint \"**/*.{css,scss}\"",
-    "stylelint:fix": "bun stylelint --fix",
+    "stylelint:fix": "npx stylelint \"**/*.{css,scss}\" --fix",
     "lint": "bun eslint && bun stylelint && bun prettier",
     "lint:fix": "bun eslint:fix && bun stylelint:fix && bun prettier:fix",
     "prettier": "prettier --check .",

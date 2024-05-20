@@ -18,6 +18,8 @@ $color--orange-4: #d75702;
 $color--red: #f53a20;
 $color--green: #4d932c;
 
+$color--red-white-10: color.mix($color--red, $color--white, $weight: 10);
+
 $colors: (
   black: $color--black,
   banner: $color--banner,
@@ -36,4 +38,6 @@ $colors: (
   orange-4: $color--orange-4,
   red: $color--red,
   green: $color--green,
+
+  red-white-10: $color--red-white-10,
 );
