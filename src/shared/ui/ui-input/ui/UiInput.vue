@@ -224,6 +224,12 @@ defineExpose<UiInputExposeType>({
       --el-input-icon-color: var(--color-grey-2);
       --el-input-focus-border-color: var(--color-grey-3);
     }
+
+    :deep(.ui-input__inner) {
+      --el-disabled-bg-color: var(--color-dark-grey);
+      --el-disabled-border-color: var(--color-dark-grey);
+      --el-disabled-text-color: var(--color-grey-2);
+    }
   }
 }
 </style>

@@ -25,11 +25,11 @@
         :on-error="onError"
       >
         <ui-form-item error="some error" prop="surname">
-          <ui-input v-model="formData.surname" label="Фамилия" placeholder="your surname" />
+          <ui-input v-model="formData.surname" label="Фамилия" placeholder="your surname" disabled />
         </ui-form-item>
 
         <ui-form-item prop="password">
-          <ui-input v-model="formData.password" placeholder="Пароль" show-password label="Пароль" />
+          <ui-input v-model="formData.password" placeholder="Пароль" show-password label="Пароль" disabled />
         </ui-form-item>
 
         <ui-form-item prop="search">
@@ -39,6 +39,7 @@
             label="Что-то там"
             placeholder="подпись"
             suffix-icon="search"
+            disabled
           />
         </ui-form-item>
 
