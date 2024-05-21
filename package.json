@@ -11,7 +11,7 @@
     "eslint": "eslint . --ext .js,.tsx,.ts",
     "eslint:fix": "bun eslint --fix",
     "stylelint": "stylelint \"**/*.{css,scss}\"",
-    "stylelint:fix": "bun stylelint --fix",
+    "stylelint:fix": "npx stylelint \"**/*.{css,scss}\" --fix",
     "lint": "bun eslint && bun stylelint && bun prettier",
     "lint:fix": "bun eslint:fix && bun stylelint:fix && bun prettier:fix",
     "prettier": "prettier --check .",
@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "@popperjs/core": "^2.11.8",
+    "@vueuse/motion": "^2.1.0",
     "date-fns": "^3.6.0",
     "element-plus": "^2.7.2",
     "nuxt": "^3.11.2",
@@ -36,7 +37,6 @@
     "@types/node": "^20.12.8",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.2",
-    "@typescript-eslint/typescript-estree": "^7.9.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "cross-env": "^7.0.3",
     "eslint": "8.22.0",
@@ -61,8 +61,5 @@
     "typescript": "^5.1.3",
     "vite-plugin-compression2": "^1.1.0",
     "vue-tsc": "^2.0.16"
-  },
-  "engines": {
-    "node": ">=20.8.1"
   }
 }

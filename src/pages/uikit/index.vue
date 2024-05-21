@@ -24,8 +24,23 @@
         :on-success="getData"
         :on-error="onError"
       >
-        <ui-form-item prop="name">
-          <el-input v-model="formData.name" placeholder="Hi" />
+        <ui-form-item error="some error" prop="surname">
+          <ui-input v-model="formData.surname" label="Фамилия" placeholder="your surname" disabled />
+        </ui-form-item>
+
+        <ui-form-item prop="password">
+          <ui-input v-model="formData.password" placeholder="Пароль" show-password label="Пароль" disabled />
+        </ui-form-item>
+
+        <ui-form-item prop="search">
+          <ui-input
+            v-model="formData.search"
+            appearance="secondary"
+            label="Что-то там"
+            placeholder="подпись"
+            suffix-icon="search"
+            disabled
+          />
         </ui-form-item>
 
         <el-button native-type="submit" :loading="formRef?.isLoading" class="mt-12"> Отправить </el-button>
@@ -47,20 +62,37 @@
 </template>
 
 <script setup lang="ts">
-import { userApi, type UserType } from '#entities/user'
-import { FORM_RULES, ROUTES } from '#shared/constants'
-import { UiForm, UiFormItem, UiIcon, type UiFormInstanceType, UiPagination, type PaginationType } from '#shared/ui'
 import type { FormRules } from 'element-plus'
-import UiButton from '#shared/ui/ui-button/ui/UiButton.vue'
+
+import { userApi, type UserType } from '#entities/user'
+
+import { FORM_RULES, ROUTES } from '#shared/constants'
+import {
+  UiForm,
+  UiFormItem,
+  UiIcon,
+  UiButton,
+  UiInput,
+  UiPagination,
+  type UiFormInstanceType,
+  type PaginationType,
+} from '#shared/ui'
+
 import { NuxtLink } from '#components'
 const formRef = ref<UiFormInstanceType>()
 
 const rules: FormRules = {
   name: FORM_RULES.required,
+  surname: FORM_RULES.required,
+  password: FORM_RULES.required,
+  search: FORM_RULES.required,
 }
 
 const formData = ref({
   name: '',
+  surname: '',
+  password: '',
+  search: '',
 })
 const pagination = ref<PaginationType>({
   page: 1,

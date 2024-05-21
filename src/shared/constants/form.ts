@@ -6,4 +6,4 @@ export const RULES = {
 
 export const FORM_RULES: FormRules = {
   required: [RULES.req],
-} as const
+}
