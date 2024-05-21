@@ -15,13 +15,16 @@
     <about-best-bicycles />
 
     <about-questions />
+
+    <about-team />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AboutBestBicycles, AboutHero, AboutQuestions, AboutWords } from '#pages/about/ui'
+import { AboutBestBicycles, AboutHero, AboutQuestions, AboutWords, AboutTeam } from '#pages/about/ui'
 
 import { useAbout } from '#entities/about'
+
 const { getAboutData, getSocialNetworksData } = useAbout()
 
 await Promise.all([getAboutData(), getSocialNetworksData()])

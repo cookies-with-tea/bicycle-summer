@@ -16,7 +16,6 @@
     </div>
 
     <div class="about-best-bicycles__image">
-      <!--    parallax bg-->
       <nuxt-img src="/about/about-best.png" alt="Велосипед около моря" />
     </div>
 
@@ -58,6 +57,7 @@ const { aboutData, breakpoints } = useAbout()
 <style scoped lang="scss">
 .about-best-bicycles {
   margin-top: 48px;
+  position: relative;
 
   &__text-block {
     margin-top: 24px;
