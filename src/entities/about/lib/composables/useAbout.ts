@@ -19,6 +19,19 @@ const breakpoints: SwiperOptions['breakpoints'] = {
   },
 }
 
+const companiesBreakpoints: SwiperOptions['breakpoints'] = {
+  320: {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+  },
+  768: {
+    spaceBetween: 16,
+  },
+  1200: {
+    spaceBetween: 80,
+  },
+}
+
 const aboutData = useState<AboutResponseType | undefined>('aboutData', () => undefined)
 const socialNetworks = useState<SocialNetworksResponseTypeType>('socialNetworks', () => [])
 
@@ -45,6 +58,7 @@ export const useAbout = () => {
 
   return {
     breakpoints,
+    companiesBreakpoints,
 
     aboutData,
     socialNetworks,

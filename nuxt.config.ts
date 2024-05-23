@@ -52,7 +52,17 @@ export default defineNuxtConfig({
     '#entities': fileURLToPath(new URL('./src/entities', import.meta.url)),
     '#shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
   },
-  modules: ['@element-plus/nuxt', '@nuxt/image', 'nuxt-svgo', '@nuxtjs/device', '@vueuse/motion/nuxt'],
+  modules: [
+    '@element-plus/nuxt',
+    '@nuxt/image',
+    'nuxt-svgo',
+    '@nuxtjs/device',
+    '@vueuse/motion/nuxt',
+    'vue-yandex-maps/nuxt',
+  ],
+  yandexMaps: {
+    apikey: process.env.NUXT_YANDEX_MAPS_API_KEY,
+  },
   image: {
     quality: 80,
     format: ['webp'],
@@ -78,6 +88,8 @@ export default defineNuxtConfig({
     dirs: [],
   },
   runtimeConfig: {
+    yandexMapsApiKey: process.env.NUXT_YANDEX_MAPS_API_KEY,
+
     public: {
       baseURL: process.env.NUXT_VUE_APP_BASE_URI,
       siteURL: process.env.NUXT_VUE_APP_SITE_URL,

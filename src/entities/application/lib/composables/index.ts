@@ -20,6 +20,6 @@ export const useApplication = () => {
 
   return {
     getApplicationInfoData,
-    applicationInfo,
+    applicationInfo: computed(() => applicationInfo.value),
   }
 }

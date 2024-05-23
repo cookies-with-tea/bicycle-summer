@@ -1,7 +1,7 @@
-@import 'reset';
+@use 'reset';
 
-@import 'fonts';
+@use 'fonts';
 
-@import 'base';
-@import 'utils';
-@import 'ripple';
+@use 'base';
+@use 'utils';
+@use 'ripple';

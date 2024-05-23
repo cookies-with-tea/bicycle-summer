@@ -1,3 +1,6 @@
+@use 'assets/styles/additionals/mixins' as *;
+@use 'assets/styles/additionals/variables' as *;
+
 :root {
   --container-max: 100%;
   --container-max-header-footer: 100%;

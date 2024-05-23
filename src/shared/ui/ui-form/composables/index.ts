@@ -1,3 +1,3 @@
-export { useForm } from './use-form.ts'
+export { useForm } from './use-form'
 
-export { useFormErrors } from './use-form-errors.ts'
+export { useFormErrors } from './use-form-errors'

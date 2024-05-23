@@ -1,5 +1,7 @@
 import type { BrandType } from '#entities/brand'
 
+import type { MediaType, OptionType } from '#shared/types'
+
 export type AboutUsefulType = {
   title: string
   description: string
@@ -30,6 +32,9 @@ export type AboutResponseType = {
   best: {
     dealers: AboutBestDealers
   }
+  gallery: Array<MediaType>
+  contacts: Array<OptionType>
+  companies: Array<MediaType>
 }
 
 export type SocialNetworkType = {

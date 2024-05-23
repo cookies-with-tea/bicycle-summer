@@ -89,6 +89,88 @@ export const ABOUT_MOCK_DATA: AboutResponseType = {
       ],
     },
   },
+  gallery: [
+    {
+      src: 'https://img10.joyreactor.cc/pics/post/full/Anime-art-%D1%83%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5-Anime-Ero-212148.jpeg',
+      alt: '',
+    },
+    {
+      src: 'https://img10.joyreactor.cc/pics/post/full/Anime-art-%D1%83%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5-Anime-Ero-212148.jpeg',
+      alt: '',
+    },
+    {
+      src: 'https://cdn1.ozone.ru/s3/multimedia-v/6452541703.jpg',
+      alt: '',
+    },
+    {
+      src: 'https://sun9-8.userapi.com/impf/c849324/v849324964/b5b13/GpDdjcSHCL0.jpg?size=1280x991&quality=96&sign=edca706d2f236491b4cadf530005cacd&c_uniq_tag=kNW_hD9_K_REeryCMDXFa61wFUk5J78zHACMnx1FFTw&type=album',
+      alt: '',
+    },
+    {
+      src: 'https://img10.reactor.cc/pics/post/Anime-Original-Anime-Artist-Anime-Anime-Ero-4782455.png',
+      alt: '',
+    },
+  ],
+  contacts: [
+    {
+      label: 'Наименование:',
+      value: 'ИП НЕТРЕБИН ВЛАДИСЛАВ ВЯЧЕСЛАВОВИЧ',
+    },
+    {
+      label: 'ИНН:',
+      value: '402573939444',
+    },
+    {
+      label: 'ОГРН:',
+      value: '317402700004683',
+    },
+    {
+      label: 'Фактический адрес: ',
+      value: 'Москва, ул. Доватора, дом 7/8 с1',
+    },
+    {
+      label: 'Юридический адрес: ',
+      value: 'Москва, ул. Доватора, дом 7/8 с1',
+    },
+    {
+      label: 'Расчетный счет: ',
+      value: '40802810800000085888',
+    },
+    {
+      label: 'Банк: ',
+      value: 'АО «ТИНЬКОФФ БАНК»',
+    },
+    {
+      label: 'Корр.счет: ',
+      value: '30101810145250000974 ',
+    },
+    {
+      label: 'БИК: ',
+      value: '044525974',
+    },
+  ],
+  companies: [
+    {
+      src: 'https://img10.joyreactor.cc/pics/post/full/Anime-art-%D1%83%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5-Anime-Ero-212148.jpeg',
+      alt: '',
+    },
+    {
+      src: 'https://img10.joyreactor.cc/pics/post/full/Anime-art-%D1%83%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5-Anime-Ero-212148.jpeg',
+      alt: '',
+    },
+    {
+      src: 'https://cdn1.ozone.ru/s3/multimedia-v/6452541703.jpg',
+      alt: '',
+    },
+    {
+      src: 'https://sun9-8.userapi.com/impf/c849324/v849324964/b5b13/GpDdjcSHCL0.jpg?size=1280x991&quality=96&sign=edca706d2f236491b4cadf530005cacd&c_uniq_tag=kNW_hD9_K_REeryCMDXFa61wFUk5J78zHACMnx1FFTw&type=album',
+      alt: '',
+    },
+    {
+      src: 'https://img10.reactor.cc/pics/post/Anime-Original-Anime-Artist-Anime-Anime-Ero-4782455.png',
+      alt: '',
+    },
+  ],
 }
 
 export const SOCIAL_NETWORKS_MOCK_DATA: SocialNetworksResponseTypeType = [

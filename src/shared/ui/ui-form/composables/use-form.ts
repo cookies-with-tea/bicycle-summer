@@ -1,6 +1,6 @@
 import type { UseFormOptionsType } from '../types'
 
-import { useFormErrors } from './use-form-errors.ts'
+import { useFormErrors } from './use-form-errors'
 
 const showNotification = (notification: UseFormOptionsType['notification']) => {
   if (typeof notification === 'undefined') return

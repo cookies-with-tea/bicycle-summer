@@ -58,6 +58,13 @@
   line-height: 1.6;
 }
 
+@mixin text-desk-mob-18($font-weight: 400) {
+  font-weight: $font-weight;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.18px;
+}
+
 @mixin text-desk-mob-20($font-weight: 400) {
   font-weight: $font-weight;
   font-size: 20px;

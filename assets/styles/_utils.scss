@@ -1,3 +1,6 @@
+@use 'assets/styles/additionals/mixins' as *;
+@use 'assets/styles/additionals/variables' as *;
+
 @include generate-color-classes;
 @include generate-display-classes((block, flex, grid, none, inline, inline-block, inline-flex, inline-grid));
 @include generate-text-classes(

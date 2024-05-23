@@ -1,1 +1,1 @@
-export * from './format-phone.ts'
+export * from './format-phone'
