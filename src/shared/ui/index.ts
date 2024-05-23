@@ -10,6 +10,8 @@ export { default as UiSlider } from './ui-slider'
 
 export { default as UiButton } from './ui-button'
 
+export { default as UiInput } from './ui-input'
+
 export * from './ui-form/types'
 
 export * from './ui-pagination/types'

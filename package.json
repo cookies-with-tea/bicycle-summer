@@ -22,7 +22,6 @@
     "@nuxt/image": "^1.7.0",
     "@popperjs/core": "^2.11.8",
     "@vueuse/motion": "^2.1.0",
-    "add": "^2.0.6",
     "date-fns": "^3.6.0",
     "element-plus": "^2.7.2",
     "maska": "^2.1.11",

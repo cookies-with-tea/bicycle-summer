@@ -8,6 +8,7 @@ $color--grey-1: #4c4c4c;
 $color--grey-2: #777;
 $color--grey-3: #e5e5e5;
 $color--light-grey: #b3b3b3;
+$color--background-hover: #f1f1f1;
 $color--background: #f8f8f8;
 $color--white: #fff;
 $color--orange: #f57520;
@@ -16,6 +17,8 @@ $color--orange-3: #e1610c;
 $color--orange-4: #d75702;
 $color--red: #f53a20;
 $color--green: #4d932c;
+
+$color--red-white-10: color.mix($color--red, $color--white, $weight: 10%);
 
 $colors: (
   black: $color--black,
@@ -26,6 +29,7 @@ $colors: (
   grey-2: $color--grey-2,
   grey-3: $color--grey-3,
   light-grey: $color--light-grey,
+  background-hover: $color--background-hover,
   background: $color--background,
   white: $color--white,
   orange: $color--orange,
@@ -34,4 +38,6 @@ $colors: (
   orange-4: $color--orange-4,
   red: $color--red,
   green: $color--green,
+
+  red-white-10: $color--red-white-10,
 );

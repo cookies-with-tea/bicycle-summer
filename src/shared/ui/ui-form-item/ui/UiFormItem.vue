@@ -17,8 +17,9 @@
 </template>
 
 <script setup lang="ts">
+// DEBT: При ошибке увеличивается ширина.
 import { UiIcon } from '#shared/ui'
-import { useFormErrors } from '#shared/ui/ui-form/composables'
+import { useFormErrors } from '#shared/ui/ui-form'
 
 type Props = {
   prop?: string
@@ -59,10 +60,12 @@ const { formErrors } = useFormErrors()
   }
 
   &.is-error {
-    // :deep(.el-input__wrapper),
-    // :deep(.el-textarea__inner) {
-    //   background: var();
-    // }
+    :deep(.el-input__wrapper),
+    :deep(.el-textarea__inner) {
+      --el-input-text-color: var(--color-red);
+      --el-input-placeholder-color: var(--color-red);
+      --el-input-bg-color: var(--color-red-white-10);
+    }
 
     :deep(.el-upload-dragger) {
       border-color: var(--color-red);
@@ -75,16 +78,15 @@ const { formErrors } = useFormErrors()
 
     :deep(.el-select__wrapper) {
       --el-color-danger: var(--color-red);
-      // --el-fill-color-blank: var();
     }
 
     :deep(.el-checkbox__inner) {
       border-color: var(--color-red);
     }
 
-    // :deep(.ui-input__label) {
-    //   background-color:
-    // }
+    :deep(.ui-input__label) {
+      color: var(--color-red);
+    }
 
     :deep(.ui-date-picker) {
       box-shadow: 0 0 0 1px var(--color-red) inset;
@@ -93,6 +95,15 @@ const { formErrors } = useFormErrors()
       .el-input__wrapper {
         box-shadow: none;
         background-color: transparent;
+      }
+    }
+
+    &:deep(.ui-input--secondary) {
+      .el-input__wrapper,
+      .el-textarea__inner {
+        --el-input-text-color: var(--color-red-white-10);
+        --el-input-placeholder-color: var(--color-red);
+        --el-input-bg-color: var(--color-black);
       }
     }
   }
