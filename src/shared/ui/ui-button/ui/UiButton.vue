@@ -39,24 +39,29 @@ const uiButton = computed(() => {
   border-radius: 10px;
   padding: 16px 12px;
   text-decoration: none;
-
-  &:hover {
-    background-color: var(--color-orange-2);
-  }
-
-  &:active {
-    background-color: var(--color-orange-3);
-  }
+  transition: background-color 1s ease, color 1s ease;
 
   &:disabled {
-    background-color: var(--color-orange-4);
-    cursor: default;
+    cursor: not-allowed;
   }
 
   &--primary {
+    position: relative;
     border: none;
     color: var(--color-white);
     background-color: var(--color-orange);
+
+    &:hover {
+      background-color: var(--color-orange-2);
+    }
+
+    &:active {
+      background-color: var(--color-orange-3);
+    }
+
+    &:disabled {
+      background-color: var(--color-orange-4);
+    }
   }
 
   &--secondary {
@@ -67,6 +72,10 @@ const uiButton = computed(() => {
     &:hover {
       background-color: var(--color-black);
       color: var(--color-white);
+    }
+
+    &:disabled {
+      color: var(--color-grey-2);
     }
   }
 
