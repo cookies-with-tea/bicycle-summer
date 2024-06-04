@@ -39,7 +39,7 @@ const uiButton = computed(() => {
   border-radius: 10px;
   padding: 16px 12px;
   text-decoration: none;
-  transition: background-color 1s ease, color 1s ease;
+  transition: background-color 0.15s ease, color 1s ease;
 
   &:disabled {
     cursor: not-allowed;
